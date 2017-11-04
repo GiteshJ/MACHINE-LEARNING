@@ -1,5 +1,5 @@
 NEURAL NETWORKS ALGORITHMS
-1. USING SCIKIT LEARN :                                                                                                                         A. MLPClassifier(activation='relu', alpha=0.0001, batch_size='auto', beta_1=0.9,
+1. USING SCIKIT LEARN :  \N                                                                                                                       A. MLPClassifier(activation='relu', alpha=0.0001, batch_size='auto', beta_1=0.9,
        beta_2=0.999, early_stopping=False, epsilon=1e-08,
        hidden_layer_sizes=(13, 13, 13), learning_rate='constant',
        learning_rate_init=0.001, max_iter=500, momentum=0.9,
