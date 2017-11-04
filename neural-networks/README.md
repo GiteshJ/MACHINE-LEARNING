@@ -5,9 +5,8 @@ NEURAL NETWORKS ALGORITHMS
 <br />I.	‘identity’, no-op activation, useful to implement linear bottleneck, returns f(x) = x 
 <br />II.	 ‘logistic’, the logistic sigmoid function, returns f(x) = 1 / (1 + exp(-x)).
 <br />III.	 ‘tanh’, the hyperbolic tan function, returns f(x) = tanh(x). 
-<br />IV.	‘relu’, the rectified linear unit function, returns f(x) = max(0, x) 
- 
-<br />You can change the solver to be: Stochastic Gradient Descent(SGD), Adam, or L-BFGS D.<br /> Play around with other parameters to check how the classifier behaves.<br />
+<br />IV.	‘relu’, the rectified linear unit function, returns f(x) = max(0, x)
+<br />____________You can change the solver to be: Stochastic Gradient Descent(SGD), Adam, or L-BFGS D.<br /> Play around with other parameters to check how the classifier behaves.<br /><br />
 2.	USING HARD CODE: 
 <br />STOCHASTIC GRADIENT DESCENT IS USED . 
 <br />FEATURE NORMALISATION IS USED,
