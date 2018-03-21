@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+{% load static %}
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CDN Technergize</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <!-- Bulma Version 0.6.0 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css" integrity="sha256-HEtF7HLJZSC3Le1HcsWbz1hDYFPZCqDhZa9QsCgVUdw=" crossorigin="anonymous" />
+  <style type="text/css">
+    html,body {
+      font-family: 'Open Sans';
+    }
+
+
+.file-upload{display:block;text-align:center;font-family: Helvetica, Arial, sans-serif;font-size: 12px;}
+.file-upload .file-select{display:block;border: 2px solid #dce4ec;color: #34495e;cursor:pointer;height:40px;line-height:40px;text-align:left;background:#FFFFFF;overflow:hidden;position:relative;}
+.file-upload .file-select .file-select-button{background:#dce4ec;padding:0 10px;display:inline-block;height:40px;line-height:40px;}
+.file-upload .file-select .file-select-name{line-height:40px;display:inline-block;padding:0 10px;}
+.file-upload .file-select:hover{border-color:#34495e;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
+.file-upload .file-select:hover .file-select-button{background:#34495e;color:#FFFFFF;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
+.file-upload.active .file-select{border-color:#3fa46a;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
+.file-upload.active .file-select .file-select-button{background:#3fa46a;color:#FFFFFF;transition:all .2s ease-in-out;-moz-transition:all .2s ease-in-out;-webkit-transition:all .2s ease-in-out;-o-transition:all .2s ease-in-out;}
+.file-upload .file-select input[type=file]{z-index:100;cursor:pointer;position:absolute;height:100%;width:100%;top:0;left:0;opacity:0;filter:alpha(opacity=0);}
+.file-upload .file-select.file-select-disabled{opacity:0.65;}
+.file-upload .file-select.file-select-disabled:hover{cursor:default;display:block;border: 2px solid #dce4ec;color: #34495e;cursor:pointer;height:40px;line-height:40px;margin-top:5px;text-align:left;background:#FFFFFF;overflow:hidden;position:relative;}
+.file-upload .file-select.file-select-disabled:hover .file-select-button{background:#dce4ec;color:#666666;padding:0 10px;display:inline-block;height:40px;line-height:40px;}
+.file-upload .file-select.file-select-disabled:hover .file-select-name{line-height:40px;display:inline-block;padding:0 10px;}
+  </style>
+</head>
+<body>
+  <section class="hero is-fullheight is-default is-bold">
+  <div class="hero-head">
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="../">
+           CDN
+          </a>
+          <span class="navbar-burger burger" data-target="navbarMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+          <div class="navbar-end">
+            <a class="navbar-item is-active">
+              Home
+            </a>
+            <a class="navbar-item">
+              Examples
+            </a>
+            <a class="navbar-item">
+              Team
+            </a>
+            <a class="navbar-item">
+              Help
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <div class="columns is-vcentered">
+          <div class="column is-5">
+            <figure class="image">
+              <img src="{% static "bg.jpeg" %}" alt="Description">
+            </figure>
+          </div>
+          <div class="column is-6 is-offset-1">
+            <h1 class="title is-2">
+              Say Yes To Life
+            </h1>
+            <h2 class="subtitle is-4">
+    Check Cancer Probaility from Histopathological Images 
+            </h2>
+            <br>
+            <p class="has-text-centered">
+
+                    <form action="/predict" id="canform">
+                        <div class="file-upload">
+                                <div class="file-select">
+                                  <div class="file-select-button" id="fileName">Choose File</div>
+                                  <div class="file-select-name" id="noFile">Choose Histopathological Images </div> 
+                                  <input type="file" name="chooseFile" id="chooseFile" style="max-width: 50px ; width : 50px ; height :auto">
+                                  <br>
+
+                                </div>
+                              </div>      
+                              {% csrf_token %}
+                              <a type="submit" onclick="return false ;"  id="submit" style="margin-top: 25px" class="button is-medium is-info is-outlined " value="Predict">Predict</a>
+                              <h2 class="subtitle is-4" style="margin-top : 10px" id="ans">
+                                        </h2>
+                      </form>
+
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-foot">
+      <div class="container">
+        <div class="tabs is-centered">
+          <ul>
+            <li><a>Copyright 2018 . Created For Technergize (Initiative by IEEE CS India SAC )</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script async type="text/javascript" src="../js/bulma.js"></script>
+</body>
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+
+<script>
+
+ 
+
+
+            $(document).ready(function() {
+            $("#submit").click(function() {
+
+            $("#submit").addClass("is-loading");
+            $("#submit").removeClass("is-danger");
+            $("#submit").addClass("is-info");
+
+            $("#submit").focus();
+            
+              var form = $('#canform')[0];
+
+              var data = new FormData(form);
+                  $.ajax({
+                    url: "/predict/",
+                    type: "POST",
+                    data : data,
+                    enctype: 'multipart/form-data',
+                    processData: false,  // Important!
+                    contentType: false,
+                    cache: false,
+            
+                    success: function(data) {
+                      if(data) {
+                        $("#submit").removeClass("is-loading");
+                        $("#ans").text(data.out);
+                      } else {
+                        alert('Error');
+                      }
+
+                    },
+                    error: function(){
+                      $("#submit").removeClass("is-loading");
+                      $("#submit").removeClass("is-info");
+                      $("#submit").addClass("is-danger");
+
+                      // will fire when timeout is reached
+                  },
+                  timeout:(3000 * 300)
+                  });
+                  return false;
+             }); 
+            
+             $('#chooseFile').bind('change', function () {
+              var filename = $("#chooseFile").val();
+                $(".file-upload").removeClass('active');
+                $("#noFile").text(filename); 
+              
+  
+            });
+            });
+          
+</script>
+
+</html>
+
