@@ -1,2 +1,2 @@
-# Cancer Phase Detection
+# Breast Cancer Phase Detection Using Histopathology Images
 Project for IEEE Technergize Competition
