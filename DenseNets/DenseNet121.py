@@ -78,7 +78,7 @@ def bottleneck_composite(l,layer):
     
     
 layer=0    
-def chexnet(classes=14,input_shape=(224,224,1),):
+def xnet(classes=14,input_shape=(224,224,1),):
     X_input = Input(input_shape)
     layer=0
     layer=layer+1
@@ -165,7 +165,7 @@ def chexnet(classes=14,input_shape=(224,224,1),):
     return model
 
 
-model = chexnet(classes = 14,input_shape = (224,224,1))
+model = xnet(classes = 14,input_shape = (224,224,1))
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
 
