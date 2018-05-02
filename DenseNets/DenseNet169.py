@@ -32,7 +32,7 @@ conv='conv_layer_'
 fc= 'fc_layer_'
 k=32
 def load_dataset():
-    fullpath='ChestXray-NIHCC/images/00000001_000.png'
+    fullpath='00000001_000.png'
     im = io.imread((fullpath))  
     #plt.imshow(im)
     print(im.shape)
